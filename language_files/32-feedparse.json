@@ -1,0 +1,13 @@
+{
+    "feedparse": {
+        "label": {
+            "feedurl": "しゅとくさきURL",
+            "refresh": "こうしん",
+            "minutes": "ふん"
+        },
+        "errors": {
+            "badstatuscode": "エラー - むこうなステータスコード",
+            "invalidurl": "むこうなURL"
+        }
+    }
+}

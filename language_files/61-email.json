@@ -1,0 +1,48 @@
+{
+    "email": {
+        "label": {
+            "to": "あてさき",
+            "server": "サーバ",
+            "port": "ポート",
+            "useSecureConnection": "あんぜんなせつぞくをしよう",
+            "userid": "ユーザID",
+            "password": "パスワード",
+            "repeat": "こうしん",
+            "seconds": "びょう",
+            "folder": "フォルダ",
+            "protocol": "プロトコル",
+            "useSSL": "SSLをしよう",
+            "disposition": "じゅしんごのしょり",
+            "none": "なし",
+            "read": "きどく",
+            "delete": "さくじょ"
+        },
+        "default-message": "__description__\n\nNode-REDからファイルがてんぷされました: __filename__",
+        "tip": {
+            "cred": "<b>ちゅうしゃく:</b> emailkeys.jsファイルからにんしょうじょうほうをコピーしました。",
+            "recent": "ちゅうしゃく: さいしんのメールを1けんのみしゅとくします。"
+        },
+        "status": {
+            "messagesent": "メッセージをそうしんしました: __response__",
+            "fetching": "じゅしんちゅう",
+            "foldererror": "フォルダじゅしんエラー",
+            "messageerror": "メッセージじゅしんエラー",
+            "message": "メッセージ #__number__",
+            "newemail": "あたらしいe-mailをじゅしんしました: __topic__",
+            "duplicate": "じゅうふくしたメッセージはそうしんされません: __topic__",
+            "inboxzero": "じゅしんトレイにメールがありません",
+            "sending": "そうしんちゅう",
+            "sendfail": "そうしんがしっぱいしました",
+            "connecterror": "せつぞくエラー"
+        },
+        "errors": {
+            "nouserid": "e-mailのユーザIDがせっていされていません",
+            "nopassword": "e-mailのパスワードがせっていされていません",
+            "nocredentials": "e-mailのにんしょうじょうほうがありません。「じょうほう」タブをさんしょうしてください",
+            "nosmtptransport": "SMTPてんそうがせっていされていません。「じょうほう」タブをさんしょうしてください",
+            "nopayload": "そうしんするペイロードがありません",
+            "fetchfail": "フォルダのじゅしんにしっぱいしました: __folder__",
+            "messageerror": "メッセージじゅしんエラー: __error__"
+        }
+    }
+}

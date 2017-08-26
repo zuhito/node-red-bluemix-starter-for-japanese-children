@@ -1,0 +1,844 @@
+{
+    "common": {
+        "label": {
+            "payload": "ペイロード",
+            "topic": "トピック",
+            "name": "なまえ",
+            "username": "ユーザめい",
+            "password": "パスワード"
+        },
+        "status": {
+            "connected": "せつぞくずみ",
+            "not-connected": "みせつぞく",
+            "disconnected": "せつだん",
+            "connecting": "せつぞくちゅう",
+            "error": "エラー",
+            "ok": "OK"
+        },
+        "notification": {
+            "error": "<strong>エラー</strong>: __message__",
+            "errors": {
+                "not-deployed": "ノードがデプロイされていません",
+                "no-response": "サーバのおうとうがありません",
+                "unexpected": "そうていがいのエラー (__status__) __message__"
+            }
+        },
+        "errors": {
+            "nooverride": "けいこく: メッセージでせっていしたプロパティは、ノードのプロパティをうわがきできません。しょうさいはbit.ly/nr-override-msg-propsをさんしょうしてください。"
+        }
+    },
+    "inject": {
+        "inject": "inject",
+        "repeat": "repeat = __repeat__",
+        "crontab": "crontab = __crontab__",
+        "stopped": "stopped",
+        "failed": "injectしっぱい: __error__",
+        "label": {
+            "repeat": "くりかえし"
+        },
+        "timestamp": "timestamp",
+        "none": "なし",
+        "interval": "していしたじかんかんかく",
+        "interval-time": "していしたじかんかんかく、にちじ",
+        "time": "していしたにちじ",
+        "seconds": "びょう",
+        "minutes": "ふん",
+        "hours": "じかん",
+        "between": "じこく",
+        "previous": "ぜんかいのあたい",
+        "at": "じこく",
+        "and": "～",
+        "every": "じかんかんかく",
+        "days": [
+            "げつようび",
+            "かようび",
+            "すいようび",
+            "もくようび",
+            "きんようび",
+            "どようび",
+            "にちようび"
+        ],
+        "on": "ようび",
+        "onstart": "Node-REDきどうじにじっこう",
+        "tip": "<b>ちゅうしゃく:</b> 「していしたじかんかんかく、にちじ」と「していしたにちじ」はcronをしようします。しょうさいはノードの「じょうほう」をかくにんしてください。",
+        "success": "injectしょりをじっこうしました: __label__",
+        "errors": {
+            "failed": "injectしょりがしっぱいしました。しょうさいはログをかくにんしてください。"
+        }
+    },
+    "catch": {
+        "catch": "catch all",
+        "catchNodes": "catch (__number__)",
+        "label": {
+            "source": "エラーしゅとくもと",
+            "node": "ノード",
+            "type": "かた",
+            "selectAll": "すべてせんたく",
+            "sortByLabel": "ノードめいでならべかえ",
+            "sortByType": "かたでならべかえ"
+        },
+        "scope": {
+            "all": "すべてのノード",
+            "selected": "せんたくしたノード"
+        }
+    },
+    "status": {
+        "status": "status (all)",
+        "statusNodes": "status (__number__)",
+        "label": {
+            "source": "じょうたいしゅとくもと",
+            "node": "ノード",
+            "type": "かた",
+            "selectAll": "すべてせんたく",
+            "sortByLabel": "ノードめいでならべかえ",
+            "sortByType": "かたでならべかえ"
+        },
+        "scope": {
+            "all": "すべてのノード",
+            "selected": "せんたくしたノード"
+        }
+    },
+    "debug": {
+        "output": "たいしょう",
+        "msgprop": "メッセージプロパティ",
+        "msgobj": "msgオブジェクトぜんたい",
+        "to": "しゅつりょくさき",
+        "debtab": "デバッグタブ",
+        "tabcon": "デバッグタブとコンソール",
+        "notification": {
+            "activated": "ゆうこうかしました: __label__",
+            "deactivated": "むこうかしました: __label__"
+        },
+        "sidebar": {
+            "label": "デバッグ",
+            "name": "デバッグメッセージ",
+            "filterAll": "すべてのフロー",
+            "filterSelected": "せんたくしたノード",
+            "filterCurrent": "げんざいのフロー",
+            "debugNodes": "debugノード",
+            "clearLog": "ログをさくじょ",
+            "openWindow": "あたらしいウィンドウでひらく"
+        },
+        "messageMenu": {
+            "collapseAll": "ぜんパスをおりたたむ",
+            "clearPinned": "せんたくしたパス",
+            "filterNode": "ノードをフィルタ",
+            "clearFilter": "フィルタをしょきか"
+        }
+    },
+    "link": {
+        "linkIn": "link in",
+        "linkOut": "link out",
+        "label": {
+            "event": "イベントめい",
+            "node": "なまえ",
+            "type": "フロー",
+            "sortByFlow": "フローめいでならべかえ",
+            "sortByLabel": "なまえでならべかえ"
+        }
+    },
+    "tls": {
+        "tls": "TLSせってい",
+        "label": {
+            "use-local-files": "ローカルファイルのひみつかぎとしょうめいしょをしよう",
+            "upload": "ファイル",
+            "cert": "しょうめいしょ",
+            "key": "ひみつかぎ",
+            "ca": "CAしょうめいしょ",
+            "verify-server-cert": "サーバしょうめいしょをかくにん"
+        },
+        "placeholder": {
+            "cert": "しょうめいしょ(PEMけいしき)のパス",
+            "key": "ひみつかぎ(PEMけいしき)のパス",
+            "ca": "CAしょうめいしょ(PEMけいしき)のパス"
+        },
+        "error": {
+            "missing-file": "しょうめいしょとひみつかぎのファイルがせっていされていません"
+        }
+    },
+    "exec": {
+        "label": {
+            "command": "コマンド",
+            "append": "ひきすう",
+            "timeout": "タイムアウト",
+            "timeoutplace": "にんい",
+            "return": "しゅつりょく",
+            "seconds": "びょう"
+        },
+        "placeholder": {
+            "extraparams": "ついかひきすう"
+        },
+        "opt": {
+            "exec": "コマンドしゅうりょうじ - execモード",
+            "spawn": "コマンドじっこうちゅう - spawnモード"
+        },
+        "oldrc": "きゅうかたしきのしゅつりょくをしよう(ごかんモード)"
+    },
+    "function": {
+        "label": {
+            "function": "コード",
+            "outputs": "しゅつりょくすう"
+        },
+        "error": {
+            "inputListener": "コードないで'input'イベントのリスナをせっていできません",
+            "non-message-returned": "Functionノードが __type__ かたのメッセージそうしんをこころみました"
+        },
+        "tip": "コードのきじゅつほうほうはノードの「じょうほう」をさんしょうしてください。"
+    },
+    "template": {
+        "label": {
+            "template": "テンプレート",
+            "property": "せっていさき",
+            "format": "こうぶん",
+            "syntax": "けいしき",
+            "output": "しゅつりょくけいしき",
+            "mustache": "Mustacheテンプレート",
+            "plain": "ひらぶん",
+            "json": "JSON",
+            "none": "なし"
+        },
+        "templatevalue": "This is the payload: {{payload}} !"
+    },
+    "delay": {
+        "action": "どうさ",
+        "for": "じかん",
+        "delaymsg": "メッセージのちえん",
+        "delayfixed": "していしたじかんちえん",
+        "delayvarmsg": "msg.delay にちえんをせってい",
+        "randomdelay": "ランダムじかんのちえん",
+        "limitrate": "メッセージのりゅうりょうせいげん",
+        "limitall": "すべてのメッセージ",
+        "limittopic": "msg.topicごと",
+        "fairqueue": "していしたじかんごにキューせんとうのトピックのメッセージをしゅつりょく",
+        "timedqueue": "していしたじかんごにキューにあるぜんトピックのメッセージをしゅつりょく",
+        "milisecs": "ミリびょう",
+        "secs": "びょう",
+        "sec": "びょう",
+        "mins": "ふん",
+        "min": "ふん",
+        "hours": "じかん",
+        "hour": "じかん",
+        "days": "ひ",
+        "day": "ひ",
+        "between": "ひんど",
+        "and": "かい／",
+        "rate": "りゅうりょう",
+        "msgper": "メッセージ／",
+        "dropmsg": "ちゅうかいメッセージをさくじょ",
+        "label": {
+            "delay": "delay",
+            "variable": "variable",
+            "limit": "limit",
+            "limitTopic": "limit topic",
+            "random": "random",
+            "units": {
+                "second": {
+                    "plural": "びょう",
+                    "singular": "びょう"
+                },
+                "minute": {
+                    "plural": "ふん",
+                    "singular": "ふん"
+                },
+                "hour": {
+                    "plural": "じかん",
+                    "singular": "じかん"
+                },
+                "day": {
+                    "plural": "ひ",
+                    "singular": "ひ"
+                }
+            }
+        },
+        "error": {
+            "buffer": "バッファじょうげんの1000メッセージをこえました",
+            "buffer1": "バッファじょうげんの1000メッセージをこえました"
+        }
+    },
+    "trigger": {
+        "send": "そうしんデータ",
+        "then": "そうしんごのしょり",
+        "then-send": "さいそうしんデータ",
+        "output": {
+            "string": "もじれつ",
+            "number": "すうち",
+            "existing": "そんざいするmsgオブジェクト",
+            "original": "もとのmsgオブジェクト",
+            "latest": "さいしんのmsgオブジェクト",
+            "nothing": "なし"
+        },
+        "wait-reset": "しょきかされるまでたいき",
+        "wait-for": "していしたじかんたいき",
+        "wait-loop": "していしたじかんかんかくごとにそうしんをくりかえす",
+        "duration": {
+            "ms": "ミリびょう",
+            "s": "びょう",
+            "m": "ふん",
+            "h": "じかん"
+        },
+        "extend": " あらたなメッセージをうけとったときにちえんをえんちょう",
+        "label": {
+            "trigger": "trigger",
+            "trigger-block": "trigger & block",
+            "trigger-loop": "resend every",
+            "reset": "しょきかじょうけん:",
+            "resetMessage": "msg.resetをせってい",
+            "resetPayload": "msg.payloadがつぎのあたい",
+            "resetprompt": "にんい"
+        }
+    },
+    "comment": {
+        "label": {
+            "title": "タイトル",
+            "body": "ほんぶん"
+        },
+        "tip": "ちゅうしゃく: ほんぶんは<a href=\"https://help.github.com/articles/markdown-basics/\" target=\"_blank\">GithubのMarkdownけいしき</a>としてせいけいされます。"
+    },
+    "unknown": {
+        "label": {
+            "unknown": "unknown"
+        },
+        "tip": "<p>げんざいのNode-REDかんきょうでは、ほんノードのかたがふめいです。</p><p><i>げんざいのじょうたいでにほんノードをデプロイするとせっていはほぞんされますが、ふめいなノードがインストールされるまでフローはじっこうされません。</i></p><p>しょうさいはノードの「じょうほう」をさんしょうしてください。</p>"
+    },
+    "mqtt": {
+        "label": {
+            "broker": "サーバ",
+            "example": "れい) localhost",
+            "qos": "QoS",
+            "clientid": "クライアント",
+            "port": "ポート",
+            "keepalive": "キープアライブじかん",
+            "cleansession": "セッションのしょきか",
+            "use-tls": "SSL/TLSせつぞくをしよう",
+            "tls-config": "TLSせってい",
+            "verify-server-cert": "サーバのしょうめいしょをかくにん",
+            "compatmode": "きゅうMQTT 3.1のサポート"
+        },
+        "tabs-label": {
+            "connection": "せつぞく",
+            "security": "セキュリティ",
+            "will": "Willメッセージ",
+            "birth": "Birthメッセージ"
+        },
+        "placeholder": {
+            "clientid": "IDをじどうせいせいするばあいは、むきにゅうにしてください",
+            "clientid-nonclean": "しんきではないセッションをせっていしてください",
+            "will-topic": "Willメッセージをむこうかするばあいは、むきにゅうにしてください",
+            "birth-topic": "Birthメッセージをむこうかするばあいは、むきにゅうにしてください"
+        },
+        "state": {
+            "connected": "ブローカへせつぞくしました: __broker__",
+            "disconnected": "ブローカからせつだんされました: __broker__",
+            "connect-failed": "ブローカへのせつぞくにしっぱいしました: __broker__"
+        },
+        "retain": "ほじ",
+        "true": "する",
+        "false": "しない",
+        "tip": "ちゅうしゃく: トピックやQoSをメッセージのプロパティをもちいてせっていするばあいは、むきにゅうにしてください。",
+        "errors": {
+            "not-defined": "トピックがせっていされていません",
+            "missing-config": "ブローカがせっていされていません",
+            "invalid-topic": "ふせいなトピックがせっていされています",
+            "nonclean-missingclientid": "「セッションのしょきか」しようじに、クライアントIDがせっていされていません"
+        }
+    },
+    "httpin": {
+        "label": {
+            "method": "メソッド",
+            "url": "URL",
+            "doc": "Docs",
+            "return": "しゅつりょくけいしき",
+            "upload": "ファイルのアップロード",
+            "status": "じょうたいコード",
+            "headers": "ヘッダ",
+            "other": "そのほか"
+        },
+        "setby": "- msg.methodにていぎ -",
+        "basicauth": "ベーシックにんしょうをしよう",
+        "use-tls": "SSL/TLSせつぞくをゆうこうか",
+        "tls-config": "TLSせってい",
+        "utf8": "もじれつ",
+        "binary": "バイナリバッファ",
+        "json": "JSON",
+        "tip": {
+            "in": "URLはそうたいパスになります。",
+            "res": "ほんノードにそうふするメッセージは、<i>http input</i>ノードをきてんとしてください。",
+            "req": "ちゅうしゃく: JSONのこうぶんかいせきにしっぱいしたばあいは、しゅとくしたもじれつをそのまましゅつりょくします。"
+        },
+        "httpreq": "http request",
+        "errors": {
+            "not-created": "httpNodeRootにfalseがせっていされているときは、http-inノードをさくせいできません",
+            "missing-path": "パスがせっていされていません",
+            "no-response": "おうとうがありません",
+            "json-error": "JSONのこうぶんかいせきエラー",
+            "no-url": "URLがせっていされていません",
+            "deprecated-call": "ひすいしょうのよびだしです __method__",
+            "invalid-transport": "httpでないトランスポートがようきゅうされました"
+        },
+        "status": {
+            "requesting": "ようきゅうちゅう"
+        }
+    },
+    "websocket": {
+        "label": {
+            "type": "しゅるい",
+            "path": "パス",
+            "url": "URL"
+        },
+        "listenon": "まちうけ",
+        "connectto": "せつぞく",
+        "payload": "ペイロードをそうしん/じゅしん",
+        "message": "メッセージぜんたいをそうしん/じゅしん",
+        "tip": {
+            "path1": "ひょうじゅんでは <code>payload</code> がwebsocketからそうしん、じゅしんされるデータをもちます。クライアントはJSONけいしきのもじれつとしてメッセージぜんたいをそうしん、じゅしんするようせっていできます。",
+            "path2": "This path will be relative to ",
+            "url1": "URLには ws:&#47;&#47; または wss:&#47;&#47; スキーマをしようして、そんざいするwebsocketリスナをせっていしてください。",
+            "url2": "ひょうじゅんでは <code>payload</code> がwebsocketからそうしん、じゅしんされるデータをもちます。クライアントはJSONけいしきのもじれつとしてメッセージぜんたいをそうしん、じゅしんするようせっていできます。"
+        },
+        "errors": {
+            "connect-error": "wsせつぞくでエラーがはっせいしました: ",
+            "send-error": "そうしんちゅうにエラーがはっせいしました: ",
+            "missing-conf": "サーバせっていがふそくしています"
+        }
+    },
+    "watch": {
+        "label": {
+            "files": "ファイル",
+            "recursive": "サブディレクトリをさいきてきにかんし"
+        },
+        "placeholder": {
+            "files": "ふくすうのファイルやディレクトリはコンマくぎりでにゅうりょく"
+        },
+        "tip": "Windowsのばあいは、ディレクトリのくぎりもじとして2つのバックスラッシュ \\\\ をしようしてください。"
+    },
+    "tcpin": {
+        "label": {
+            "type": "しゅるい",
+            "output": "しゅつりょく",
+            "port": "ポート",
+            "host": "ホスト",
+            "payload": "のペイロード",
+            "delimited": "くぎりもじ",
+            "close-connection": "メッセージをそうしんするたびにせつぞくをせつだん",
+            "decode-base64": "Base64メッセージのふくごう",
+            "server": "サーバ",
+            "return": "もどりち",
+            "ms": "ミリびょう",
+            "chars": "もじ"
+        },
+        "type": {
+            "listen": "まちうけ",
+            "connect": "せつぞく",
+            "reply": "TCPおうとう"
+        },
+        "output": {
+            "stream": "ストリーム",
+            "single": "たんいつ",
+            "buffer": "バイナリバッファ",
+            "string": "もじれつ",
+            "base64": "Base64もじれつ"
+        },
+        "return": {
+            "timeout": "していじかんご",
+            "character": "していもじのじゅしんじ",
+            "number": "していすうのもじれつ",
+            "never": "なし - せつぞくをいじ",
+            "immed": "そくじ - おうとうをまたない"
+        },
+        "status": {
+            "connecting": "__host__:__port__ へせつぞくしています",
+            "connected": "__host__:__port__ へせつぞくしました",
+            "listening-port": "ポート __port__ にてせつぞくをまちうけています",
+            "stopped-listening": "ポートのまちうけをていししました",
+            "connection-from": "__host__:__port__ からせつぞくされました",
+            "connection-closed": "__host__:__port__ からのせつぞくがせつだんされました",
+            "connections": "せつぞくすう __count__",
+            "connections_plural": "せつぞくすう __count__"
+        },
+        "errors": {
+            "connection-lost": "__host__:__port__ へのせつぞくがうしなわれました",
+            "timeout": "ポート __port__ のソケットがタイムアウトによりせつだんされました",
+            "cannot-listen": "ポート __port__ のまちうけができません エラー: __error__",
+            "error": "エラー: __error__",
+            "socket-error": "__host__:__port__ にてソケットのエラーがしょうじました",
+            "no-host": "ホストめいまたはポートがせっていされていません",
+            "connect-timeout": "せつぞくがタイムアウトしました",
+            "connect-fail": "せつぞくにしっぱいしました"
+        }
+    },
+    "udp": {
+        "label": {
+            "listen": "まちうけ",
+            "onport": "ポート",
+            "using": "しゅるい",
+            "output": "しゅつりょく",
+            "group": "グループ",
+            "interface": "ローカルIP",
+            "interfaceprompt": "(にんい) しようするローカルIPアドレス",
+            "send": "そうしん",
+            "toport": "ポート",
+            "address": "アドレス",
+            "decode-base64": "Base64けいしきのペイロードをふくごう"
+        },
+        "placeholder": {
+            "interface": "(にんい) eth0のIPアドレス",
+            "address": "あてさきIPアドレス"
+        },
+        "udpmsgs": "UDPメッセージ",
+        "mcmsgs": "マルチキャストメッセージ",
+        "udpmsg": "UDPメッセージ",
+        "bcmsg": "ブロードキャストメッセージ",
+        "mcmsg": "マルチキャストメッセージ",
+        "output": {
+            "buffer": "バイナリバッファ",
+            "string": "もじれつ",
+            "base64": "Base64もじれつ"
+        },
+        "bind": {
+            "random": "ローカルポートをランダムにしよう",
+            "local": "ローカルポートをしよう",
+            "target": "していしたポートをしよう"
+        },
+        "tip": {
+            "in": "ちゅうしゃく: ファイアウォールがつうしんをきょかしているかかくにんしてください。",
+            "out": "ちゅうしゃく: <code>msg.ip</code> や <code>msg.port</code> をもちいてせっていするばあいは、「アドレス」や「ポート」をむきにゅうにしてください。",
+            "port": "すでにポートがしようされています: "
+        },
+        "status": {
+            "listener-at": "udpノードが __host__:__port__ にてせつぞくをまちうけています",
+            "mc-group": "udpノードがグループ __group__ へマルチキャストしました",
+            "listener-stopped": "udpノードがまちうけをていししました",
+            "output-stopped": "udpノードがしゅつりょくをていししました",
+            "mc-ready": "udpノードはマルチキャストのじゅんびができています: __outport__ -> __host__:__port__",
+            "bc-ready": "udpノードはブロードキャストのじゅんびができています: __outport__ -> __host__:__port__",
+            "ready": "udpノードはじゅんびができています: __outport__ -> __host__:__port__",
+            "ready-nolocal": "udpノードはじゅんびができています: __host__:__port__"
+        },
+        "errors": {
+            "access-error": "UDPせつぞくエラー かんりしゃけんげんで1024みまんのポートばんごうにアクセスできるひつようがあります",
+            "error": "エラー: __error__",
+            "bad-mcaddress": "マルチキャストアドレスがふせいです",
+            "interface": "インターフェイスのIPアドレスをせっていするひつようがあります",
+            "ip-notset": "udp: IPアドレスがせっていされていません",
+            "port-notset": "udp: ポートがせっていされていません",
+            "port-invalid": "udp: ポートばんごうがふせいです",
+            "alreadyused": "udp: すでにポートがしようされています"
+        }
+    },
+    "switch": {
+        "label": {
+            "property": "プロパティ",
+            "rule": "じょうけん"
+        },
+        "and": "～",
+        "checkall": "すべてのじょうけんをてきよう",
+        "stopfirst": "さいしょにがっちしたじょうけんでしゅうりょう",
+        "ignorecase": "だいもんじ、こもじをくべつしない",
+        "rules": {
+            "btwn": "is between",
+            "cont": "contains",
+            "regex": "matches regex",
+            "true": "is true",
+            "false": "is false",
+            "null": "is null",
+            "nnull": "is not null",
+            "else": "otherwise"
+        },
+        "errors": {
+            "invalid-expr": "ふせいなひょうげん: __error__"
+        }
+    },
+    "change": {
+        "label": {
+            "rules": "ルール",
+            "rule": "ルール",
+            "set": "set __property__",
+            "change": "change __property__",
+            "delete": "delete __property__",
+            "move": "move __property__",
+            "changeCount": "change: __count__ rules",
+            "regex": "せいきひょうげんをしよう"
+        },
+        "action": {
+            "set": "あたいのだいにゅう",
+            "change": "あたいのちかん",
+            "delete": "あたいのさくじょ",
+            "move": "あたいのいどう",
+            "to": "たいしょうのあたい",
+            "search": "けんさくするもじれつ",
+            "replace": "ちかんごのもじれつ"
+        },
+        "errors": {
+            "invalid-from": "そうさたいしょうのプロパティがふせい: __error__",
+            "invalid-json": "たいしょうのあたいのJSONプロパティがふせい",
+            "invalid-expr": "JSONataしきがふせい: __error__"
+        }
+    },
+    "range": {
+        "label": {
+            "action": "どうさ",
+            "inputrange": "にゅうりょくちのはんい",
+            "resultrange": "しゅつりょくちのはんい",
+            "from": "さいしょうち",
+            "to": "さいだいち",
+            "roundresult": "しょうすうちをししゃごにゅうしせいすうちへへんかん"
+        },
+        "placeholder": {
+            "min": "れい) 0",
+            "maxin": "れい) 99",
+            "maxout": "れい) 255"
+        },
+        "scale": {
+            "payload": "msg.payloadのあたいをかくだい/しゅくしょう",
+            "limit": "にゅうりょくちのはんいがいのあたいをさいしょうち/さいだいちとしかくだい/しゅくしょう",
+            "wrap": "にゅうりょくちのはんいがいのあたいをはんいはばでわったあまりとしかくだい/しゅくしょう"
+        },
+        "tip": "ちゅうしゃく: ほんノードは、すうちのみあつかうことができます。",
+        "errors": {
+            "notnumber": "すうちではありません"
+        }
+    },
+    "csv": {
+        "label": {
+            "columns": "れつめい",
+            "separator": "くぎりもじ",
+            "c2o": "CSVからオブジェクトへへんかん",
+            "o2c": "オブジェクトからCSVへへんかん",
+            "input": "にゅうりょく",
+            "firstrow": "1ぎょうめにれつめいをふくむ",
+            "output": "しゅつりょく",
+            "includerow": "1ぎょうめをれつめいとする",
+            "newline": "かいぎょうコード"
+        },
+        "placeholder": {
+            "columns": "コンマくぎりでれつめいをにゅうりょく"
+        },
+        "separator": {
+            "comma": "コンマ",
+            "tab": "タブ",
+            "space": "くうはく",
+            "semicolon": "セミコロン",
+            "colon": "コロン",
+            "hashtag": "ハッシュタグ",
+            "other": "そのほか..."
+        },
+        "output": {
+            "row": "ぎょうごとにメッセージをぶんかつ",
+            "array": "はいれつかした1つのメッセージ"
+        },
+        "newline": {
+            "linux": "Linux (\\n)",
+            "mac": "Mac (\\r)",
+            "windows": "Windows (\\r\\n)"
+        },
+        "errors": {
+            "csv_js": "ほんノードがしょりできるけいしきは、CSVもじれつまたはJSONのみです",
+            "obj_csv": "オブジェクトをCSVへへんかんするさいのれつめいがせっていされていません"
+        }
+    },
+    "html": {
+        "label": {
+            "select": "ちゅうしゅつするようそ",
+            "output": "しゅつりょく"
+        },
+        "output": {
+            "html": "ようそないのHTML",
+            "text": "ようそのテキストのみ",
+            "attr": "ようそのすべてのぞくせい"
+        },
+        "format": {
+            "single": "はいれつかした1つのメッセージ",
+            "multi": "ようそごとのふくすうのメッセージ"
+        }
+    },
+    "json": {
+        "errors": {
+            "dropped-object": "オブジェクトけいしきでないペイロードをむししました",
+            "dropped": "たいおうしていないけいしきのペイロードをむししました",
+            "dropped-error": "ペイロードのへんかんしょりがしっぱいしました"
+        },
+        "label": {
+            "o2j": "オブジェクトからJSONへへんかん",
+            "pretty": "JSONもじれつフォーマット"
+        }
+    },
+    "yaml": {
+        "errors": {
+            "dropped-object": "オブジェクトけいしきでないペイロードをむししました",
+            "dropped": "たいおうしていないけいしきのペイロードをむししました",
+            "dropped-error": "ペイロードのへんかんしょりがしっぱいしました"
+        }
+    },
+    "xml": {
+        "label": {
+            "represent": "XMLタグぞくせいをつぎのプロパティめいとしてひょうげん",
+            "prefix": "もじれつをさんしょうするためのせっとうじ",
+            "advanced": "しょうさいせってい",
+            "x2o": "XMLからオブジェクトへへんかん"
+        },
+        "errors": {
+            "xml_js": "ほんノードは、XMLけいしきのもじれつまたはJSONのみしょりします"
+        }
+    },
+    "rpi-gpio": {
+        "label": {
+            "gpiopin": "GPIO",
+            "selectpin": "たんしのせんたく",
+            "resistor": "ていこう",
+            "readinitial": "デプロイやさいきどうじにたんしのしょきじょうたいをよみこむ",
+            "type": "しゅつりょくけいしき",
+            "initpin": "たんしのじょうたいをしょきか",
+            "debounce": "デバウンス",
+            "freq": "ひんど",
+            "button": "ボタン",
+            "pimouse": "Pi Mouse",
+            "pikeyboard": "Pi Keyboard",
+            "left": "Left",
+            "right": "Right",
+            "middle": "Middle"
+        },
+        "resistor": {
+            "none": "なし",
+            "pullup": "プルアップ",
+            "pulldown": "プルダウン"
+        },
+        "digout": "デジタルしゅつりょく",
+        "pwmout": "PWMしゅつりょく",
+        "servo": "サーボしゅつりょく",
+        "initpin0": "たんしのしょきレベル - Low (0)",
+        "initpin1": "たんしのしょきレベル - High (1)",
+        "left": "ひだり",
+        "right": "みぎ",
+        "middle": "ちゅうかん",
+        "any": "すべて",
+        "pinname": "たんし",
+        "alreadyuse": "しようちゅう",
+        "alreadyset": "せっていずみ",
+        "tip": {
+            "pin": "<b>しようちゅうのたんし</b>: ",
+            "in": "ちゅうしゃく: にゅうりょくちは、0または1のすうちのみたいおうしています。",
+            "dig": "ちゅうしゃく: 「しゅつりょくけいしき」として「デジタルしゅつりょく」をもちいるばあい、にゅうりょくちは0または1のすうちであるひつようがあります。",
+            "pwm": "ちゅうしゃく: 「しゅつりょくけいしき」として「PWMしゅつりょく」をもちいるばあい、にゅうりょくちは0～100のすうちであるひつようがあります。",
+            "ser": "<b>ちゅうしゃく</b>: サーボしゅつりょくむけ - にゅうりょくちは0～100のあいだであるひつようがあります。50がちゅうしんちです。"
+        },
+        "types": {
+            "digout": "デジタルしゅつりょく",
+            "input": "にゅうりょく",
+            "pullup": "プルアップのにゅうりょく",
+            "pulldown": "プルダウンのにゅうりょく",
+            "pwmout": "PWMしゅつりょく",
+            "servo": "サーボしゅつりょく"
+        },
+        "status": {
+            "stopped": "ていし",
+            "closed": "せつだん",
+            "not-running": "ていしちゅう"
+        },
+        "errors": {
+            "ignorenode": "Raspberry Piこゆうのノードをむししました",
+            "version": "バージョンコマンドがしっぱいしました",
+            "sawpitype": "Saw Pi Type",
+            "libnotfound": "RPi.GPIO pythonライブラリをみつけられませんでした",
+            "alreadyset": "GPIOたんし  __pin__ はすでにしゅつりょくけいしきがせっていされています: __type__",
+            "invalidpin": "GPIOたんしがふせいです",
+            "invalidinput": "にゅうりょくがふせいです",
+            "needtobeexecutable": "__command__ はじっこうかのうであるひつようがあります",
+            "mustbeexecutable": "nrgpio はじっこうかのうであるひつようがあります",
+            "commandnotfound": "nrgpio コマンドがみつかりません",
+            "commandnotexecutable": "nrgpio コマンドがじっこうかのうではありません",
+            "error": "エラー: __error__",
+            "pythoncommandnotfound": "nrpgio python コマンドがじっこうされていません"
+        }
+    },
+    "tail": {
+        "label": {
+            "filename": "ファイルめい",
+            "type": "ファイルけいしき",
+            "splitlines": "かいぎょうでメッセージをぶんかつ"
+        },
+        "action": {
+            "text": "もじれつ",
+            "binary": "バイナリバッファ"
+        },
+        "errors": {
+            "windowsnotsupport": "げんざいWindowsじょうでのどうさはたいおうしていません"
+        }
+    },
+    "file": {
+        "label": {
+            "filename": "ファイルめい",
+            "action": "どうさ",
+            "addnewline": "メッセージのにゅうりょくのたびにかいぎょうをついか",
+            "createdir": "ディレクトリがそんざいしないばあいはさくせい",
+            "outputas": "しゅつりょくけいしき",
+            "breakchunks": "チャンクへぶんかつ",
+            "breaklines": "ぎょうへぶんかつ",
+            "filelabel": "file",
+            "sendError": "エラーメッセージをそうしん(ごかんモード)",
+            "deletelabel": "delete __file__"
+        },
+        "action": {
+            "append": "ファイルへついき",
+            "overwrite": "ファイルをうわがき",
+            "delete": "ファイルをさくじょ"
+        },
+        "output": {
+            "utf8": "もじれつ",
+            "buffer": "バイナリバッファ",
+            "lines": "ぎょうごとのメッセージ",
+            "stream": "バッファのストリーム"
+        },
+        "status": {
+            "wrotefile": "ファイルへかきこみました: __file__",
+            "deletedfile": "ファイルをさくじょしました: __file__",
+            "appendedfile": "ファイルへついきしました: __file__"
+        },
+        "errors": {
+            "nofilename": "ファイルめいがせっていされていません",
+            "invaliddelete": "けいこく: さくじょがむこうです。せっていダイアログでとくていのさくじょせっていをしようしてください",
+            "deletefail": "ファイルのさくじょしょりがしっぱいしました: __error__",
+            "writefail": "ファイルのかきこみしょりがしっぱいしました: __error__",
+            "appendfail": "ファイルのついきしょりがしっぱいしました: __error__",
+            "createfail": "ファイルのさくせいしょりがしっぱいしました: __error__"
+        },
+        "tip": "ちゅうしゃく: 「ファイルめい」はフルパスをせっていするひつようがあります。"
+    },
+    "split": {
+        "intro": "かたにもとづいて <code>msg.payload</code> をぶんかつ:",
+        "object": "<b>オブジェクト</b>",
+        "objectSend": "かくkey/valueペアのメッセージをそうしん",
+        "strBuff": "<b>もじれつ</b> / <b>バッファ</b>",
+        "array": "<b>はいれつ</b>",
+        "splitUsing": "ぶんかつ",
+        "splitLength": "こていちょう",
+        "stream": "メッセージのストリームとしてしょり",
+        "addname": " keyのコピーさき"
+    },
+    "join": {
+        "mode": {
+            "mode": "どうさ",
+            "auto": "じどう",
+            "custom": "しゅどう"
+        },
+        "combine": "けつごう",
+        "create": "しゅつりょく",
+        "type": {
+            "string": "もじれつ",
+            "array": "はいれつ",
+            "buffer": "バッファ",
+            "object": "key/valueオブジェクト",
+            "merged": "けつごうオブジェクト"
+        },
+        "using": "しようするあたい",
+        "key": "をキーとしてしよう",
+        "joinedUsing": "れんけつもじ",
+        "send": "メッセージそうしん:",
+        "afterCount": "していすうのメッセージパーツをじゅしんご",
+        "count": "ごうけいち",
+        "subsequent": "こうぞくのメッセージごと",
+        "afterTimeout": "さいしょのメッセージじゅしんからのタイムアウトご",
+        "seconds": "びょう",
+        "complete": "<code>msg.complete</code> プロパティがせっていされたメッセージじゅしんご",
+        "tip": "このモードでは、ほんノードが <i>split</i> ノードとくみとなるか、 <code>msg.parts</code> プロパティがせっていされたメッセージをうけとることがぜんていとなります。"
+    }
+}

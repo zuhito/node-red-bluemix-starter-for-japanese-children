@@ -1,0 +1,450 @@
+{
+    "common": {
+        "label": {
+            "name": "なまえ",
+            "ok": "OK",
+            "done": "かんりょう",
+            "cancel": "ちゅうし",
+            "delete": "さくじょ",
+            "close": "とじる",
+            "load": "よみこみ",
+            "save": "ほぞん",
+            "import": "よみこみ",
+            "export": "かきだし"
+        }
+    },
+    "workspace": {
+        "defaultName": "フロー __number__",
+        "editFlow": "フローをへんしゅう: __name__",
+        "confirmDelete": "さくじょのかくにん",
+        "delete": "ほんとうに '__label__' をさくじょしますか？",
+        "dropFlowHere": "ここにフローをドロップしてください",
+        "status": "じょうたい",
+        "enabled": "ゆうこう",
+        "disabled": "むこう",
+        "info": "しょうさい",
+        "tip": "マークダウンけいしきできじゅつした「しょうさい」は「じょうほうタブ」にひょうじされます。"
+    },
+    "menu": {
+        "label": {
+            "view": {
+                "view": "ひょうじ",
+                "grid": "グリッド",
+                "showGrid": "グリッドをひょうじ",
+                "snapGrid": "ノードのはいちをほじょ",
+                "gridSize": "グリッドのおおきさ",
+                "textDir": "テキストのほうこう",
+                "defaultDir": "ひょうじゅん",
+                "ltr": "ひだりからみぎ",
+                "rtl": "みぎからひだり",
+                "auto": "ぶんみゃく"
+            },
+            "sidebar": {
+                "show": "サイドバーをひょうじ"
+            },
+            "settings": "せってい",
+            "userSettings": "ユーザせってい",
+            "nodes": "ノード",
+            "displayStatus": "ノードのじょうたいをひょうじ",
+            "displayConfig": "ノードのせってい",
+            "import": "よみこみ",
+            "export": "かきだし",
+            "search": "ノードをけんさく",
+            "searchInput": "ノードをけんさく",
+            "clipboard": "クリップボード",
+            "library": "ライブラリ",
+            "examples": "サンプル",
+            "subflows": "サブフロー",
+            "createSubflow": "サブフローをさくせい",
+            "selectionToSubflow": "せんたくぶぶんをサブフローか",
+            "flows": "フロー",
+            "add": "フローをしんきついか",
+            "rename": "フローめいをへんこう",
+            "delete": "フローをさくじょ",
+            "keyboardShortcuts": "ショートカットキーのせつめい",
+            "login": "ログイン",
+            "logout": "ログアウト",
+            "editPalette": "パレットのかんり",
+            "other": "そのほか",
+            "showTips": "ヒントをひょうじ",
+            "help": "Node-REDウェブサイト"
+        }
+    },
+    "user": {
+        "loggedInAs": "__name__ としてログインしました",
+        "username": "ユーザめい",
+        "password": "パスワード",
+        "login": "ログイン",
+        "loginFailed": "ログインにしっぱいしました",
+        "notAuthorized": "けんげんがありません"
+    },
+    "notification": {
+        "warning": "<strong>けいこく</strong>: __message__",
+        "warnings": {
+            "undeployedChanges": "ノードのへんこうをデプロイしていません",
+            "nodeActionDisabled": "ノードのアクションは、サブフローないでむこうになっています",
+            "missing-types": "ふめいなノードがそんざいするため、フローをていししました。しょうさいはログをかくにんしてください。",
+            "restartRequired": "こうしんされたモジュールをゆうこうかするため、Node-REDをさいきどうするひつようがあります"
+        },
+        "error": "<strong>エラー</strong>: __message__",
+        "errors": {
+            "lostConnection": "サーバとのせつぞくがせつだんされました: さいせつぞくしています",
+            "lostConnectionReconnect": "サーバとのせつぞくがせつだんされました:  __time__ びょうごにさいせつぞくします",
+            "lostConnectionTry": "すぐにせつぞく",
+            "cannotAddSubflowToItself": "サブフローじしんをついかできません",
+            "cannotAddCircularReference": "じゅんかんさんしょうをけんしゅつしたため、サブフローをついかできません",
+            "unsupportedVersion": "サポートされていないバージョンのNode.jsをしようしています。<br/>さいしんのNode.js LTSにこうしんしてください。"
+        }
+    },
+    "clipboard": {
+        "nodes": "ノード",
+        "selectNodes": "うえのテキストをせんたくし、クリップボードへコピーしてください",
+        "pasteNodes": "JSONけいしきのフローデータをはりつけてください",
+        "importNodes": "フローをクリップボートからよみこみ",
+        "exportNodes": "フローをクリップボードへかきだし",
+        "importUnrecognised": "にんしきできないかたがよみこまれました:",
+        "importUnrecognised_plural": "にんしきできないかたがよみこまれました:",
+        "nodesExported": "クリップボードへフローをかきだしました",
+        "nodeCopied": "__count__ このノードをコピーしました",
+        "nodeCopied_plural": "__count__ このノードをコピーしました",
+        "invalidFlow": "ふせいなフロー: __message__",
+        "export": {
+            "selected": "せんたくしたフロー",
+            "current": "げんざいのタブ",
+            "all": "すべてのタブ",
+            "compact": "インデントのないJSONフォーマット",
+            "formatted": "インデントつきのJSONフォーマット",
+            "copy": "かきだし"
+        },
+        "import": {
+            "import": "よみこみさき",
+            "newFlow": "しんきのタブ"
+        },
+        "copyMessagePath": "パスをコピーしました",
+        "copyMessageValue": "あたいをコピーしました",
+        "copyMessageValue_truncated": "きりすてられたあたいをコピーしました"
+    },
+    "deploy": {
+        "deploy": "デプロイ",
+        "full": "すべて",
+        "fullDesc": "ワークスペースをすべてデプロイ",
+        "modifiedFlows": "へんこうしたフロー",
+        "modifiedFlowsDesc": "へんこうしたノードをふくむフローのみデプロイ",
+        "modifiedNodes": "へんこうしたノード",
+        "modifiedNodesDesc": "へんこうしたノードのみデプロイ",
+        "successfulDeploy": "デプロイがせいこうしました",
+        "deployFailed": "デプロイがしっぱいしました: __message__",
+        "unusedConfigNodes": "つかわれていない「ノードのせってい」があります。",
+        "unusedConfigNodesLink": "せっていをさんしょうする",
+        "errors": {
+            "noResponse": "サーバのおうとうがありません"
+        },
+        "confirm": {
+            "button": {
+                "ignore": "むし",
+                "confirm": "デプロイのかくにん",
+                "review": "さぶんをかくにん",
+                "cancel": "ちゅうし",
+                "merge": "へんこうをマージ",
+                "overwrite": "むししてデプロイ"
+            },
+            "undeployedChanges": "デプロイしていないへんこうがあります。このページをぬけるとへんこうがさくじょされます。",
+            "improperlyConfigured": "いかのノードは、ただしくプロパティがせっていされていません:",
+            "unknown": "ワークスペースにみちのかたのノードがあります。",
+            "confirm": "このままデプロイしてもよいですか？",
+            "doNotWarn": "このけいこくをさいどひょうじしない",
+            "conflict": "フローをへんしゅうしているあいだに、ほかのブラウザがフローをデプロイしました。デプロイをけいぞくすると、ほかのブラウザがデプロイしたフローがさくじょされます。",
+            "backgroundUpdate": "サーバじょうのフローがこうしんされました",
+            "conflictChecking": "へんこうをじどうてきにマージしてよいかかくにんしてください。",
+            "conflictAutoMerge": "へんこうのしょうとつがないため、じどうてきにマージできます。",
+            "conflictManualMerge": "へんこうにしょうとつがあるため、デプロイまえにかいけつするひつようがあります。"
+        }
+    },
+    "diff": {
+        "unresolvedCount": "みかいけつのしょうとつ __count__",
+        "unresolvedCount_plural": "みかいけつのしょうとつ __count__",
+        "globalNodes": "グローバルノード",
+        "flowProperties": "フロープロパティ",
+        "type": {
+            "added": "ついか",
+            "changed": "へんこう",
+            "unchanged": "へんこうなし",
+            "deleted": "さくじょ",
+            "flowDeleted": "さくじょされたフロー",
+            "flowAdded": "ついかされたフロー",
+            "movedTo": "__id__ へいどう",
+            "movedFrom": "__id__ からいどう"
+        },
+        "nodeCount": "ノードすう __count__",
+        "nodeCount_plural": "ノードすう __count__",
+        "local": "ローカルのへんこう",
+        "remote": "リモートのへんこう"
+    },
+    "subflow": {
+        "editSubflow": "フローのテンプレートをへんしゅう: __name__",
+        "edit": "フローのテンプレートをへんしゅう",
+        "subflowInstances": "このサブフローのテンプレートのインスタンスが __count__ こそんざいします",
+        "subflowInstances_plural": "このサブフローのテンプレートのインスタンスが __count__ こそんざいします",
+        "editSubflowProperties": "プロパティをへんしゅう",
+        "input": "にゅうりょく:",
+        "output": "しゅつりょく:",
+        "deleteSubflow": "サブフローをさくじょ",
+        "info": "しょうさい",
+        "format": "マークダウンけいしき",
+        "errors": {
+            "noNodesSelected": "<strong>サブフローをさくせいできません</strong>: ノードがせんたくされていません",
+            "multipleInputsToSelection": "<strong>サブフローをさくせいできません</strong>: ふくすうのにゅうりょくがせんたくされています"
+        }
+    },
+    "editor": {
+        "configEdit": "へんしゅう",
+        "configAdd": "ついか",
+        "configUpdate": "こうしん",
+        "configDelete": "さくじょ",
+        "nodesUse": "__count__ このノードが、このせっていをしようしています",
+        "nodesUse_plural": "__count__ このノードが、このせっていをしようしています",
+        "addNewConfig": "しんきに __type__ ノードのせっていをついか",
+        "editNode": "__type__ ノードをへんしゅう",
+        "editConfig": "__type__ ノードのせっていをへんしゅう",
+        "addNewType": "しんきに __type__ をついか...",
+        "nodeProperties": "プロパティ",
+        "portLabels": "たんしめい",
+        "labelInputs": "にゅうりょく",
+        "labelOutputs": "しゅつりょく",
+        "noDefaultLabel": "なし",
+        "defaultLabel": "きていのなまえをしよう",
+        "errors": {
+            "scopeChange": "スコープのへんこうは、ほかのフローでつかわれているノードをむこうにします"
+        }
+    },
+    "keyboard": {
+        "title": "キーボードショートカット",
+        "keyboard": "キーボード",
+        "filterActions": "どうさをけんさく",
+        "shortcut": "ショートカット",
+        "scope": "はんい",
+        "unassigned": "みわりあて",
+        "global": "グローバル",
+        "workspace": "ワークスペース",
+        "selectAll": "すべてのノードをせんたく",
+        "selectAllConnected": "せつぞくされたすべてのノードをせんたく",
+        "addRemoveNode": "ノードのせんたく、せんたくかいじょ",
+        "editSelected": "せんたくしたノードをへんしゅう",
+        "deleteSelected": "せんたくしたノードやせつぞくをさくじょ",
+        "importNode": "フローのよみこみ",
+        "exportNode": "フローのかきだし",
+        "nudgeNode": "せんたくしたノードをいどう(いどうりょうしょう)",
+        "moveNode": "せんたくしたノードをいどう(いどうりょうだい)",
+        "toggleSidebar": "サイドバーのひょうじひひょうじ",
+        "copyNode": "せんたくしたノードをコピー",
+        "cutNode": "せんたくしたノードをきりとり",
+        "pasteNode": "ノードをはりつけ",
+        "undoChange": "へんこうそうさをもどす",
+        "searchBox": "ノードをけんさく",
+        "managePalette": "パレットのかんり"
+    },
+    "library": {
+        "openLibrary": "ライブラリをひらく",
+        "saveToLibrary": "ライブラリへほぞん",
+        "typeLibrary": "__type__ ライブラリ",
+        "unnamedType": "なまえなし __type__",
+        "exportToLibrary": "ライブラリへフローをかきだす",
+        "dialogSaveOverwrite": "__libraryName__ という __libraryType__ はすでにそんざいしています うわがきしますか？",
+        "invalidFilename": "ふせいなファイルめい",
+        "savedNodes": "フローをほぞんしました",
+        "savedType": "__type__ をほぞんしました",
+        "saveFailed": "ほぞんにしっぱいしました: __message__",
+        "filename": "ファイルめい",
+        "folder": "フォルダ",
+        "filenamePlaceholder": "ファイル",
+        "fullFilenamePlaceholder": "a/b/file",
+        "folderPlaceholder": "a/b",
+        "breadcrumb": "ライブラリ"
+    },
+    "palette": {
+        "noInfo": "じょうほうがありません",
+        "filter": "ノードをけんさく",
+        "search": "ノードをけんさく",
+        "label": {
+            "subflows": "サブフロー",
+            "input": "にゅうりょく",
+            "output": "しゅつりょく",
+            "function": "きのう",
+            "social": "ソーシャル",
+            "storage": "ストレージ",
+            "analysis": "ぶんせき",
+            "advanced": "そのほか"
+        },
+        "event": {
+            "nodeAdded": "ノードをパレットへついかしました:",
+            "nodeAdded_plural": "ノードをパレットへついかしました",
+            "nodeRemoved": "ノードをパレットからさくじょしました:",
+            "nodeRemoved_plural": "ノードをパレットからさくじょしました:",
+            "nodeEnabled": "ノードをゆうこうかしました:",
+            "nodeEnabled_plural": "ノードをゆうこうかしました:",
+            "nodeDisabled": "ノードをむこうかしました:",
+            "nodeDisabled_plural": "ノードをむこうかしました:",
+            "nodeUpgraded": "ノードモジュール __module__ をバージョン __version__ へこうしんしました"
+        },
+        "editor": {
+            "title": "パレットのかんり",
+            "palette": "パレット",
+            "times": {
+                "seconds": "びょうまえ",
+                "minutes": "ふんまえ",
+                "minutesV": "__count__ ふんまえ",
+                "hoursV": "__count__ じかんまえ",
+                "hoursV_plural": "__count__ じかんまえ",
+                "daysV": "__count__ にちまえ",
+                "daysV_plural": "__count__ にちまえ",
+                "weeksV": "__count__ しゅうかんまえ",
+                "weeksV_plural": "__count__ しゅうかんまえ",
+                "monthsV": "__count__ かげつまえ",
+                "monthsV_plural": "__count__ かげつまえ",
+                "yearsV": "__count__ としまえ",
+                "yearsV_plural": "__count__ としまえ",
+                "yearMonthsV": "__y__ とし __count__ かげつまえ",
+                "yearMonthsV_plural": "__y__ とし __count__ かげつまえ",
+                "yearsMonthsV": "__y__ とし __count__ かげつまえ",
+                "yearsMonthsV_plural": "__y__ とし __count__ かげつまえ"
+            },
+            "nodeCount": "__label__ このノード",
+            "nodeCount_plural": "__label__ このノード",
+            "moduleCount": "__count__ このモジュール",
+            "moduleCount_plural": "__count__ このモジュール",
+            "inuse": "しようちゅう",
+            "enableall": "すべてゆうこうか",
+            "disableall": "すべてむこうか",
+            "enable": "ゆうこうか",
+            "disable": "むこうか",
+            "remove": "さくじょ",
+            "update": "__version__ へこうしん",
+            "updated": "こうしんずみ",
+            "install": "ノードをついか",
+            "installed": "ついかしました",
+            "loading": "カタログをよみこみちゅう",
+            "tab-nodes": "げんざいのノード",
+            "tab-install": "ノードをついか",
+            "sort": "ならべかえ:",
+            "sortAZ": "じしょじゅん",
+            "sortRecent": "ひづけじゅん",
+            "more": "+ さらに __count__ こ",
+            "errors": {
+                "catalogLoadFailed": "ノードのカタログのよみこみにしっぱいしました。<br>しょうさいはブラウザのコンソールをかくにんしてください。",
+                "installFailed": "ついかしょりがしっぱいしました: __module__<br>__message__<br>しょうさいはログをかくにんしてください。",
+                "removeFailed": "さくじょしょりがしっぱいしました: __module__<br>__message__<br>しょうさいはログをかくにんしてください。",
+                "updateFailed": "こうしんしょりがしっぱいしました: __module__<br>__message__<br>しょうさいはログをかくにんしてください。",
+                "enableFailed": "ゆうこうかしょりがしっぱいしました: __module__<br>__message__<br>しょうさいはログをかくにんしてください。",
+                "disableFailed": "むこうかしょりがしっぱいしました: __module__<br>__message__<br>しょうさいはログをかくにんしてください。"
+            },
+            "confirm": {
+                "install": {
+                    "body": "ノードをついかするまえに、ドキュメントをかくにんしてください。ノードによっては、モジュールのいぞんかんけいをじどうてきにかいけつできないばあいや、Node-REDのさいきどうがひつようとなるばあいがあります。",
+                    "title": "ノードをついか"
+                },
+                "remove": {
+                    "body": "Node-REDからノードをさくじょします。ノードはNode-REDがさいきどうされるまで、リソースをつかいつづけます。",
+                    "title": "ノードをさくじょ"
+                },
+                "update": {
+                    "body": "こうしんをかんりょうするにはしゅどうでNode-REDをさいきどうするひつようがあります。",
+                    "title": "ノードのこうしん"
+                },
+                "cannotUpdate": {
+                    "body": "ノードのこうしんがあります。「パレットのかんり」のがめんではこうしんされません。ドキュメントをさんしょうし、ノードのこうしんてじゅんをかくにんしてください。"
+                },
+                "button": {
+                    "review": "ノードのじょうほうをさんしょう",
+                    "install": "ついか",
+                    "remove": "さくじょ",
+                    "update": "こうしん"
+                }
+            }
+        }
+    },
+    "sidebar": {
+        "info": {
+            "name": "ノードのじょうほうをひょうじ",
+            "tabName": "なまえ",
+            "label": "じょうほう",
+            "node": "ノード",
+            "type": "かた",
+            "id": "ID",
+            "status": "じょうたい",
+            "enabled": "ゆうこう",
+            "disabled": "むこう",
+            "subflow": "サブフロー",
+            "instances": "インスタンス",
+            "properties": "プロパティ",
+            "info": "じょうほう",
+            "blank": "ブランク",
+            "null": "ヌル",
+            "showMore": "さらにひょうじ",
+            "showLess": "ひょうじをしょうりゃく",
+            "flow": "フロー",
+            "information": "じょうほう",
+            "arrayItems": "__count__ ようそ",
+            "showTips": "せっていからヒントをひょうじできます"
+        },
+        "config": {
+            "name": "ノードのせっていをひょうじ",
+            "label": "ノードのせってい",
+            "global": "すべてのフローじょう",
+            "none": "なし",
+            "subflows": "サブフロー",
+            "flows": "フロー",
+            "filterUnused": "みしよう",
+            "filterAll": "すべて",
+            "filtered": "__count__ こがむこう"
+        },
+        "palette": {
+            "name": "パレットのかんり",
+            "label": "パレット"
+        }
+    },
+    "typedInput": {
+        "type": {
+            "str": "もじれつ",
+            "num": "すうち",
+            "re": "せいきひょうげん",
+            "bool": "しんぎ",
+            "json": "JSON",
+            "bin": "バッファ",
+            "date": "にちじ"
+        }
+    },
+    "editableList": {
+        "add": "ついか"
+    },
+    "search": {
+        "empty": "いっちしたものがみつかりませんでした",
+        "addNode": "ノードをついか..."
+    },
+    "expressionEditor": {
+        "functions": "かんすう",
+        "insert": "そうにゅう",
+        "title": "JSONataしきエディタ",
+        "data": "メッセージれい",
+        "result": "けっか",
+        "format": "けいしき",
+        "compatMode": "ごかんモードがゆうこうになっています",
+        "compatModeDesc": "<h3>JSONataごかんモード</h3><p> にゅうりょくされたしきでは <code>msg</code> をさんしょうしているため、ごかんモードでひょうかします。このモードはしょうらいはいしよていのため、しきで <code>msg</code> をつかわないようしゅうせいしてください。</p><p> JSONataをNode-REDでさいしょにサポートしたさいには、 <code>msg</code> オブジェクトのさんしょうがひつようでした。たとえば <code>msg.payload</code> がペイロードをさんしょうするためにつかわれていました。</p><p> ちょくせつメッセージにたいしてしきをひょうかするようになったため、このけいしきはつかえなくなります。ペイロードをさんしょうするには、たんに <code>payload</code> にしてください。</p>",
+        "noMatch": "いっちしたけっかなし",
+        "errors": {
+            "invalid-expr": "ふせいなJSONataしき:\n  __message__",
+            "invalid-msg": "ふせいなJSONメッセージれい:\n  __message__",
+            "context-unsupported": "$flowContext や $globalContextの\nコンテキストきのうをテストできません",
+            "eval": "ひょうげんひょうかエラー:\n  __message__"
+        }
+    },
+    "jsonEditor": {
+        "title": "JSONエディタ",
+        "format": "JSONフォーマット"
+    },
+    "bufferEditor": {
+        "title": "バッファエディタ",
+        "modeString": "UTF-8もじれつとしてしょり",
+        "modeArray": "JSONはいれつとしてしょり",
+        "modeDesc": "<h3>バッファエディタ</h3><p>バッファがたは、バイトちからなるJSONはいれつとしてかくのうされます。このエディタは、にゅうりょくちをJSONはいれつとしてこうぶんかいせきします。もしふせいなJSONはいれつのばあい、UTF-8もじれつとしてあつかい、かくもじコードばんごうからなるはいれつへへんかんします。</p><p>たとえば、 <code>Hello World</code> というあたいを、いかのJSONはいれつへへんかんします。<pre>[72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]</pre></p>"
+    }
+}

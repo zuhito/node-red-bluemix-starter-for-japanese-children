@@ -1,0 +1,50 @@
+{
+    "twitter": {
+        "label": {
+            "twitter-id": "Twitter ID",
+            "search": "けんさくたいしょう",
+            "for": "けんさくじょうけん",
+            "user": "ユーザ",
+            "dmslabel": "DMs",
+            "followers": "followed by",
+            "tweetslabel": "tweets",
+            "eventslabel": "events",
+            "clickhere": "Twitterのにんしょうをおこなうため、ここをクリックしてください"
+        },
+        "placeholder": {
+            "for": "@ids, #tagsはコンマくぎりでにゅうりょく",
+            "user": "ふくすうユーザのばあい、@twitterのハンドルネームをコンマくぎりでにゅうりょく"
+        },
+        "search": {
+            "public": "すべてのこうかいツイート",
+            "follow": "フォローしているユーザのすべてのツイート",
+            "user": "とくていユーザのツイート",
+            "direct": "ダイレクトメッセージ",
+            "events": "じしんのイベント"
+        },
+        "tip": "ちゅうしゃく: ふくすうのけんさくじょうけんをしていするばあいは、くうはくのないコンマでくぎりにゅうりょくしてください。コンマはORじょうけん、くうはくはANDじょうけんとなります。<br/>Twitter APIはすべてのツイートをしゅとくできないことがあります。<br/>「フォローしているユーザのすべてのツイート」には、リツイートやいいねがふくまれます。<br/><br/>msg.payloadにけんさくじょうけんをしていするばあいは <b>「けんさくじょうけん」</b> をくうらんにしてください。",
+        "status": {
+            "using-geo": "いちじょうほうをしようちゅう: __location__",
+            "tweeting": "ツイートちゅう",
+            "failed": "しっぱい"
+        },
+        "warn": {
+            "nousers": "ユーザがせっていされていません",
+            "waiting": "けんさくをまっています"
+        },
+        "errors": {
+            "ratelimit": "じゅしんりょうのじょうげんにたっしました",
+            "limitrate": "じゅしんりょうをせいげんちゅう",
+            "streamerror": "ストリームエラー: __error__ (__rc__)",
+            "unexpectedend": "ストリームがよきせずしゅうりょうしました",
+            "invalidtag": "むこうなタグプロパティ",
+            "missingcredentials": "Twitterがにんしょうされていません",
+            "truncated": "140もじをこえるツイートがきりすてられました",
+            "sendfail": "ツイートのとうこうがしっぱい: __error__",
+            "nopayload": "ツイートするペイロードがありません",
+            "oauthbroke": "something in twitter oauth broke.",
+            "oautherror": "<html><head></head><body><p>にんしょうしょりでもんだいがしょうじました。いかのエラーがかえされました:</p><p><b>__statusCode__</b>: __errorData__</p><p>Node-REDがうごいているシステムのじこくがただしくせっていされていないことが、このエラーのげんいんの1つです。</p></body></html>",
+            "authorized": "<html><head></head><body><p>にんしょうされました - このウィンドウをとじて、Node-REDへもどることができます。</p></body></html>"
+        }
+    }
+}
