@@ -19,7 +19,7 @@
         "node-red-nodes-cf-sqldb-dashdb":"0.x"
     },
     "scripts": {
-        "start": "cp -v language_files/27-twitter.json node_modules/node-red-node-twitter/locales/ja/27-twitter.json ; cp -v language_files/32-feedparse.json node_modules/node-red-node-feedparser/locales/ja/32-feedparse.json ; cp -v language_files/61-email.json node_modules/node-red-node-email/locales/ja/61-email.json ; cp -v language_files/editor.json red/api/locales/ja/editor.json ; cp -v language_files/infotips.json red/api/locales/ja/infotips.json ; cp -v language_files/jsonata.json red/api/locales/ja/jsonata.json ; cp -v language_files/messages.json nodes/core/locales/ja/messages.json ; cp -v language_files/rbe.json node_modules/node-red-node-rbe/locales/ja/rbe.json ; node --max-old-space-size=384 index.js --settings ./bluemix-settings.js -v"
+        "start": "cp -v language_files/27-twitter.json node_modules/node-red-node-twitter/locales/ja/27-twitter.json ; cp -v language_files/32-feedparse.json node_modules/node-red-node-feedparser/locales/ja/32-feedparse.json ; cp -v language_files/61-email.json node_modules/node-red-node-email/locales/ja/61-email.json ; cp -v language_files/editor.json node_modules/node-red/red/api/locales/ja/editor.json ; cp -v language_files/infotips.json node_modules/node-red/red/api/locales/ja/infotips.json ; cp -v language_files/jsonata.json node_modules/node-red/red/api/locales/ja/jsonata.json ; cp -v language_files/messages.json node_modules/node-red/nodes/core/locales/ja/messages.json ; cp -v language_files/rbe.json node_modules/node-red-node-rbe/locales/ja/rbe.json ; node --max-old-space-size=384 index.js --settings ./bluemix-settings.js -v"
     },
     "engines": {
         "node": "6.x"
