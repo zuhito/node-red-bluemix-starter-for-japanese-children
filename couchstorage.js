@@ -30,7 +30,7 @@ var libraryCache = {};
 
 function prepopulateFlows(resolve) {
     var key = appname+"/"+"flow";
-    flowDb.get(key,function(err,doc) {
+    flowDb.get(key,(err, doc) => {
         if (err) {
             var promises = [];
             if (fs.existsSync(__dirname+"/defaults/flow.json")) {
@@ -59,7 +59,7 @@ function prepopulateFlows(resolve) {
             } else {
                 util.log("[couchstorage] No default credentials found");
             }
-            when.settle(promises).then(function() {
+            when.settle(promises).then(() => {
                 resolve();
             });
         } else {
@@ -71,16 +71,16 @@ function prepopulateFlows(resolve) {
 
 
 var couchstorage = {
-    init: function(_settings) {
+    init: _settings => {
         settings = _settings;
         var couchDb = nano(settings.couchUrl);
         appname = settings.couchAppname || require('os').hostname();
         var dbname = settings.couchDb||"nodered";
 
-        return when.promise(function(resolve,reject) {
-            couchDb.db.get(dbname,function(err,body) {
+        return when.promise((resolve, reject) => {
+            couchDb.db.get(dbname,(err, body) => {
                 if (err) {
-                    couchDb.db.create(dbname,function(err,body) {
+                    couchDb.db.create(dbname,(err, body) => {
                         if (err) {
                             reject("Failed to create database: "+err);
                         } else {
@@ -88,7 +88,7 @@ var couchstorage = {
                             flowDb.insert({
                                 views:{
                                     flow_entries_by_app_and_type:{
-                                        map:function(doc) {
+                                        map:doc => {
                                             var p = doc._id.split("/");
                                             if (p.length > 2 && p[2] == "flow") {
                                                 var meta = {path:p.slice(3).join("/")};
@@ -97,7 +97,7 @@ var couchstorage = {
                                         }
                                     },
                                     lib_entries_by_app_and_type:{
-                                        map:function(doc) {
+                                        map:doc => {
                                             var p = doc._id.split("/");
                                             if (p.length > 2) {
                                                 if (p[2] != "flow") {
@@ -116,7 +116,7 @@ var couchstorage = {
                                         }
                                     }
                                 }
-                            },"_design/library",function(err,b) {
+                            },"_design/library",(err, b) => {
                                 if (err) {
                                     reject("Failed to create view: "+err);
                                 } else {
@@ -133,10 +133,10 @@ var couchstorage = {
         });
     },
 
-    getFlows: function() {
+    getFlows: () => {
         var key = appname+"/"+"flow";
-        return when.promise(function(resolve,reject) {
-            flowDb.get(key,function(err,doc) {
+        return when.promise((resolve, reject) => {
+            flowDb.get(key,(err, doc) => {
                 if (err) {
                     if (err.statusCode != 404) {
                         reject(err.toString());
@@ -151,14 +151,14 @@ var couchstorage = {
         });
     },
 
-    saveFlows: function(flows) {
+    saveFlows: flows => {
         var key = appname+"/"+"flow";
-        return when.promise(function(resolve,reject) {
+        return when.promise((resolve, reject) => {
             var doc = {_id:key,flow:flows};
             if (currentFlowRev) {
                 doc._rev = currentFlowRev;
             }
-            flowDb.insert(doc,function(err,db) {
+            flowDb.insert(doc,(err, db) => {
                 if (err) {
                     reject(err.toString());
                 } else {
@@ -169,10 +169,10 @@ var couchstorage = {
         });
     },
 
-    getCredentials: function() {
+    getCredentials: () => {
         var key = appname+"/"+"credential";
-        return when.promise(function(resolve,reject) {
-            flowDb.get(key,function(err,doc) {
+        return when.promise((resolve, reject) => {
+            flowDb.get(key,(err, doc) => {
                 if (err) {
                     if (err.statusCode != 404) {
                         reject(err.toString());
@@ -187,14 +187,14 @@ var couchstorage = {
         });
     },
 
-    saveCredentials: function(credentials) {
+    saveCredentials: credentials => {
         var key = appname+"/"+"credential";
-        return when.promise(function(resolve,reject) {
+        return when.promise((resolve, reject) => {
             var doc = {_id:key,credentials:credentials};
             if (currentCredRev) {
                 doc._rev = currentCredRev;
             }
-            flowDb.insert(doc,function(err,db) {
+            flowDb.insert(doc,(err, db) => {
                 if (err) {
                     reject(err.toString());
                 } else {
@@ -205,10 +205,10 @@ var couchstorage = {
         });
     },
 
-    getSettings: function() {
+    getSettings: () => {
         var key = appname+"/"+"settings";
-        return when.promise(function(resolve,reject) {
-            flowDb.get(key,function(err,doc) {
+        return when.promise((resolve, reject) => {
+            flowDb.get(key,(err, doc) => {
                 if (err) {
                     if (err.statusCode != 404) {
                         reject(err.toString());
@@ -223,14 +223,14 @@ var couchstorage = {
         });
     },
 
-    saveSettings: function(settings) {
+    saveSettings: settings => {
         var key = appname+"/"+"settings";
-        return when.promise(function(resolve,reject) {
+        return when.promise((resolve, reject) => {
             var doc = {_id:key,settings:settings};
             if (currentSettingsRev) {
                 doc._rev = currentSettingsRev;
             }
-            flowDb.insert(doc,function(err,db) {
+            flowDb.insert(doc,(err, db) => {
                 if (err) {
                     reject(err.toString());
                 } else {
@@ -241,10 +241,10 @@ var couchstorage = {
         });
     },
 
-    getAllFlows: function() {
+    getAllFlows: () => {
         var key = [appname,"flow"];
-        return when.promise(function(resolve,reject) {
-            flowDb.view('library','flow_entries_by_app_and_type',{key:key}, function(e,data) {
+        return when.promise((resolve, reject) => {
+            flowDb.view('library','flow_entries_by_app_and_type',{key:key}, (e, data) => {
                 if (e) {
                     reject(e.toString());
                 } else {
@@ -268,13 +268,13 @@ var couchstorage = {
         });
     },
 
-    getFlow: function(fn) {
+    getFlow: fn => {
         if (fn.substr(0) != "/") {
             fn = "/"+fn;
         }
         var key = appname+"/lib/flow"+fn;
-        return when.promise(function(resolve,reject) {
-            flowDb.get(key,function(err,data) {
+        return when.promise((resolve, reject) => {
+            flowDb.get(key,(err, data) => {
                 if (err) {
                     reject(err);
                 } else {
@@ -284,18 +284,18 @@ var couchstorage = {
         });
     },
 
-    saveFlow: function(fn,data) {
+    saveFlow: (fn, data) => {
         if (fn.substr(0) != "/") {
             fn = "/"+fn;
         }
         var key = appname+"/lib/flow"+fn;
-        return when.promise(function(resolve,reject) {
+        return when.promise((resolve, reject) => {
             var doc = {_id:key,data:data};
-            flowDb.get(key,function(err,d) {
+            flowDb.get(key,(err, d) => {
                 if (d) {
                     doc._rev = d._rev;
                 }
-                flowDb.insert(doc,function(err,d) {
+                flowDb.insert(doc,(err, d) => {
                     if (err) {
                         reject(err);
                     } else {
@@ -307,7 +307,7 @@ var couchstorage = {
         });
     },
 
-    getLibraryEntry: function(type,path) {
+    getLibraryEntry: (type, path) => {
         if (path != "" && path.substr(0,1) != "/") {
             var key = appname+"/lib/"+type+"/"+path;
         } else {
@@ -318,14 +318,14 @@ var couchstorage = {
             return when.resolve(libraryCache[key]);
         }
 
-        return when.promise(function(resolve,reject) {
-            flowDb.get(key,function(err,doc) {
+        return when.promise((resolve, reject) => {
+            flowDb.get(key,(err, doc) => {
                 if (err) {
                     if (path.substr(-1,1) == "/") {
                         path = path.substr(0,path.length-1);
                     }
                     var qkey = [appname,type,path];
-                    flowDb.view('library','lib_entries_by_app_and_type',{key:qkey}, function(e,data) {
+                    flowDb.view('library','lib_entries_by_app_and_type',{key:qkey}, (e, data) => {
                         if (e) {
                             reject(e);
                         } else {
@@ -354,7 +354,7 @@ var couchstorage = {
             });
         });
     },
-    saveLibraryEntry: function(type,path,meta,body) {
+    saveLibraryEntry: (type, path, meta, body) => {
 
         var p = path.split("/");    // strip multiple slash   
         p = p.filter(Boolean);
@@ -364,13 +364,13 @@ var couchstorage = {
             path = "/"+path;
         }
         var key = appname+"/lib/"+type+path;
-        return when.promise(function(resolve,reject) {
+        return when.promise((resolve, reject) => {
             var doc = {_id:key,meta:meta,body:body};
-            flowDb.get(key,function(err,d) {
+            flowDb.get(key,(err, d) => {
                 if (d) {
                     doc._rev = d._rev;
                 }
-                flowDb.insert(doc,function(err,d) {
+                flowDb.insert(doc,(err, d) => {
                     if (err) {
                         reject(err);
                     } else {
