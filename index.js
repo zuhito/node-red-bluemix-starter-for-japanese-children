@@ -33,7 +33,7 @@ if (!settings.adminAuth) {
         storage = require('./node_modules/node-red/red/runtime/storage/localfilesystem');
     }
     util.log("Loading application settings");
-    storage.init(settings).then(storage.getSettings).then(function(runtimeSettings) {
+    storage.init(settings).then(storage.getSettings).then(runtimeSettings => {
         if (process.env.NODE_RED_USERNAME && process.env.NODE_RED_PASSWORD) {
             util.log("Enabling adminAuth using NODE_RED_USERNAME/NODE_RED_PASSWORD");
             var config = {
@@ -46,7 +46,7 @@ if (!settings.adminAuth) {
 
             if (runtimeSettings.bluemixConfig && runtimeSettings.bluemixConfig.hasOwnProperty('adminAuth')) {
                 delete runtimeSettings.bluemixConfig.adminAuth;
-                storage.saveSettings(runtimeSettings).then(function() {
+                storage.saveSettings(runtimeSettings).then(() => {
                     startNodeRED(config);
                 });
             } else {
@@ -62,24 +62,24 @@ if (!settings.adminAuth) {
             var bodyParser = require('body-parser');
             var app = express();
             app.use(bodyParser.json());
-            app.get("/", function(req,res) {
+            app.get("/", (req, res) => {
                 res.sendFile(path.join(__dirname,"public","first-run.html"));
             });
-            app.post("/setup", function(req,res) {
+            app.post("/setup", (req, res) => {
                 if (req.body.adminAuth && req.body.adminAuth.password) {
                     req.body.adminAuth.password = bcrypt.hashSync(req.body.adminAuth.password, 8);
                 }
                 runtimeSettings.bluemixConfig = req.body;
                 util.log("Received first-use setup configuration");
-                storage.saveSettings(runtimeSettings).then(function() {
+                storage.saveSettings(runtimeSettings).then(() => {
                     res.status(200).end();
-                    setTimeout(function() {
+                    setTimeout(() => {
                         util.log("Stopping first-use setup application");
-                        server.shutdown(function() {
+                        server.shutdown(() => {
                             startNodeRED(req.body);
                         });
                     },1000);
-                }).otherwise(function(err) {
+                }).otherwise(err => {
                     util.log("Failed to save configuration");
                     util.log(err);
                     res.status(200).end();
@@ -87,12 +87,12 @@ if (!settings.adminAuth) {
             });
             app.use("/",express.static(path.join(__dirname,"public")));
             var http = require('http');
-            server = http.createServer(function(req,res) {app(req,res);});
+            server = http.createServer((req, res) => {app(req,res);});
             server = require('http-shutdown')(server);
-            server.listen(settings.uiPort,settings.uiHost,function() {});
+            server.listen(settings.uiPort,settings.uiHost,() => {});
             util.log("Waiting for first-use setup to complete");
         }
-    }).otherwise(function(err) {
+    }).otherwise(err => {
         console.log("Failed to initialise storage module");
         console.log(err);
     });
@@ -105,14 +105,14 @@ function startNodeRED(config) {
         util.log("Enabling adminAuth security - set NODE_RED_USERNAME and NODE_RED_PASSWORD to change credentials");
         settings.adminAuth = {
             type: "credentials",
-            users: function(username) {
+            users: username => {
                 if (config.adminAuth.username == username) {
                     return when.resolve({username:username,permissions:"*"});
                 } else {
                     return when.resolve(null);
                 }
             },
-            authenticate: function(username, password) {
+            authenticate: (username, password) => {
                 if (config.adminAuth.username === username && bcrypt.compareSync(password,config.adminAuth.password)) {
                     return when.resolve({username:username,permissions:"*"});
                 } else {
@@ -122,9 +122,7 @@ function startNodeRED(config) {
         };
         if ((process.env.NODE_RED_GUEST_ACCESS === 'true') || (process.env.NODE_RED_GUEST_ACCESS === undefined && config.adminAuth.allowAnonymous)) {
             util.log("Enabling anonymous read-only access - set NODE_RED_GUEST_ACCESS to 'false' to disable");
-            settings.adminAuth.default = function() {
-                return when.resolve({anonymous: true, permissions:"read"});
-            };
+            settings.adminAuth.default = () => when.resolve({anonymous: true, permissions:"read"});
         } else {
             util.log("Disabled anonymous read-only access - set NODE_RED_GUEST_ACCESS to 'true' to enable");
         }
